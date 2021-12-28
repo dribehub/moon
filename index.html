@@ -1,97 +1,108 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>ジェイ</title>
-        <link rel="stylesheet" href="style.css">
 
-    </head>
-    <body>
-      <div class="clock-box">
+<head>
+  <title>home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="head.png" type="image/x-icon">
+  <script type="text/javascript">
+    document.addEventListener("click", (e) => {
+      document.getElementById("input").focus();
+    });
+  </script>
+</head>
 
-        
+<body>
+  <div class="clock-box">
 
-        <div id="clockbox"></div>
+    <div id="clockbox"></div>
 
-        <script type="text/javascript">
-        function GetClock(){
-        var d=new Date();
-        var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds();
-        if(nmin<=9) nmin="0"+nmin;
-        if(nsec<=9) nsec="0"+nsec;
-        
-        var clocktext=""+nhour+":"+nmin+":"+nsec+"";
-        document.getElementById('clockbox').innerHTML=clocktext;
-        }
-        
-        GetClock();
-        setInterval(GetClock,1000);
-        </script>
-        
+    <script type="text/javascript">
+      function GetClock() {
+        var date = new Date();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+        if (h <= 9) h = "0" + h;
+        if (m <= 9) m = "0" + m;
+        if (s <= 9) s = "0" + s;
+        var clocktext = `${h}:${m}:${s}`;
+        document.getElementById('clockbox').innerHTML = clocktext;
+      }
 
-        <div id="datebox"></div>
+      GetClock();
+      setInterval(GetClock, 1000);
+    </script>
 
-<script type="text/javascript">
-var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+    <div id="datebox"></div>
 
-function GetClock(){
-var d=new Date();
-var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+    <script type="text/javascript">
+      var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+"";
-document.getElementById('datebox').innerHTML=clocktext;
-}
+      function GetClock() {
+        var date = new Date();
+        var wd = date.getDay();
+        var m = date.getMonth();
+        var d = date.getDate(); 
+        var y = date.getFullYear();
+        var clocktext = `${days[wd]}, ${months[m]} ${d}, ${y}`;
+        document.getElementById('datebox').innerHTML = clocktext;
+      }
 
-GetClock();
-setInterval(GetClock,1000);
-</script>
+      GetClock();
+      setInterval(GetClock, 1000);
+    </script>
 
+  </div>
 
+  <img src="forest.jpg" alt="forest">
 
-      </div>
-     
-      <img src="moon.jpg" alt="anime girl">
+  <nav>
+    <ul>
+      <li>social</li>
+      <li><a href="https://tumblr.com/">tumblr</a></li>
+      <li><a href="https://reddit.com/">reddit</a></li>
+      <li><a href="https://last.fm/user/beder_butka">last.fm</a></li>
+      <li><a href="https://netflix.com/browse">netflix</a></li>
+      <li><a href="https://web.telegram.org/">telegram</a></li>
+      <li><a href="https://web.whatsapp.com/">whatsapp</a></li>
+      <li><a href="https://instagram.com/">instagram</a></li>
+      <li><a href="https://letterboxd.com/">letterboxd</a></li>
+    </ul>
+    <ul>
+      <li>reddit</li>
+      <li><a href="https://reddit.com/r/startpages/">startpages</a></li>
+      <li><a href="https://reddit.com/r/unixporn/">unixporn</a></li>
+      <li><a href="https://reddit.com/r/vimporn/">vimporn</a></li>
+      <li><a href="https://reddit.com/r/linuxmasterrace/">linux</a></li>
+      <li><a href="https://reddit.com/r/TwinPeaksCircleJerk/">tpcj</a></li>
+      <li><a href="https://reddit.com/r/vim/">vim</a></li>
+      <li><a href="https://reddit.com/r/adventofcode/">aoc</a></li>
+      <li><a href="https://reddit.com/r/twinpeaks/">tp</a></li>
+    </ul>
+    <ul>
+      <li>code</li>
+      <li><a href="https://adventofcode.com/">aoc</a></li>
+      <li><a href="https://leetcode.com/">leet</a></li>
+      <li><a href="https://github.com/dribehub/">github</a></li>
+      <li><a href="https://visualgo.net/en/">visualgo</a></li>
+    </ul>
+    <ul>
+      <li>extra</li>
+      <li><a href="https://mail.google.com/mail/u/2/#inbox">@fshnstudent</a></li>
+      <li><a href="https://mail.google.com/mail/u/1/#inbox">beder.butka</a></li>
+      <li><a href="https://mail.google.com/mail/u/3/#inbox">@innovaway</a></li>
+      <li><a href="https://mail.google.com/mail/u/0/#inbox">bekizepp</a></li>
+      <li><a href="https://bo.innovaway.it/chronos/index.jsp?page=TIMESHEET">chronos</a></li>
+      <li><a href="http://gitlab.innovaway.it/">gitlab</a></li>
+      <li><a href="https://drive.google.com/file/d/1NZCI6pwccLxPRiqbBwZMNuscN84mlf9a/view?pli=1">smart</a></li>
+    </ul>
+  </nav>
 
+  <form action="https://duckduckgo.com/" method="GET">
+    <input id="input" autofocus name="q" type="search" placeholder="search" tabindex="1" autocomplete="off">
+  </form>
+</body>
 
-        <nav>
-          
-            <ul>
-              <li><a href="https://gitlab.com/">gitlab</a></li>
-              <li><a href="https://wallhaven.cc/">wallhaven</a></li>
-              <li><a href="https://www.netflix.com/">netflix</a></li>
-              <li><a href="https://web.whatsapp.com/">whatsapp</a></li>
-            </ul>
-        
-            <ul>
-              <li><a href="https://anilist.co/home">anilist</a></li>
-              <li><a href="https://animepahe.org/">animepahe</a></li>
-              <li><a href="https://animixplay.to/">animixplay</a></li>
-              <li><a href="https://subsplease.org/">subsplease</a></li>
-            </ul>
-        
-            <ul>
-              <li><a href="https://www.reddit.com/r/unixporn/">r/unixporn</a></li>
-              <li><a href="https://www.reddit.com/r/Animemes/">r/animeme</a></li>
-              <li><a href="https://www.reddit.com/r/archlinux/">r/archlinux</a></li>
-              <li><a href="https://www.reddit.com/r/anime_irl/">r/anime_irl</a></li>
-            </ul>
-
-            <ul>
-              <li><a href="https://www.reddit.com/r/unixporn/">r/unixporn</a></li>
-              <li><a href="https://www.reddit.com/r/Animemes/">r/animeme</a></li>
-              <li><a href="https://www.reddit.com/r/archlinux/">r/archlinux</a></li>
-              <li><a href="https://www.reddit.com/r/anime_irl/">r/anime_irl</a></li>
-            </ul>
-
-            
-
-          </nav>
-          <form action="https://duckduckgo.com/" method="GET" target="_blank">
-            <input autofocus
-                   name="q"
-                   type="search"
-                   placeholder="search..."
-                    tabindex="1">
-          </form>
-    </body>
 </html>

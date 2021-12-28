@@ -1,101 +1,93 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
+:root {
+    --tiles: url("tiles.png");
+    --bg: #3B4252;
+    --text-nord: #8CD0D3;
+    --text-milk: #FDF2D9;
+}
 
-
-html,body {
+html, body {
     font-family: 'Ubuntu Mono', monospace;
-    font-size: 16px;
-    background: #1a1b26;
+    font-size: 25px;
+    background: var(--bg);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 0px;
     margin: 0px;
-    
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 img {
     height: 230px;
-    width: 630px;
+    width: 700px; /* 630px */
     object-fit: cover;
-    border: 2px solid #a9b1d6;
-    /* border-bottom: none; */
-    margin-bottom: -3px;
-
+    border: 2px solid var(--text-nord);
+    margin-bottom: 20px;
+    padding: 5px;
 }
 
 nav {
-    color: #a9b1d6;
-    background-color: #24283b;
+    color: var(--text-nord);
+    background: var(--bg);
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    margin-top: 0px;
+    grid-template-columns: repeat(4, 1fr);
     text-align: center;
-    border: 2px solid #a9b1d6;
-    border-top: none;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    
-    
+    margin: 0 0 20px 0;
+    padding: 5px 0;
 }
 
 ul {
     list-style-type: none;
-    margin-left: -35px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-
-
-
+    margin: 5px 0 20px -35px;
 }
-
-/* div.user {
-    background-color: #24283b;
-    color: white;
-    margin-top: 0px;
-    padding-left: 0px;
-    padding-bottom: 0px;
-    padding: 3px;
-    border: 1px solid white;
-}
-
-div.taskbar {
-    color: #a9b1d6;
-    background-color: #24283b;
-    border: 1px solid #a9b1d6;
-    padding: 3px;   
-} */
 
 .clock-box {
-    position: relative;
-    color: #a9b1d6;
-    background-color: #1a1b26;
-    flex-direction: row;
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--text-milk);
+    background: var(--bg);
+}
+
+#clockbox, #datebox {
+    text-align: center;
+    /* position: relative; */
+    /* flex-direction: row; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* margin-bottom: 20px; */
 }
 
 a {
     text-decoration: none;
-    color: #a9b1d6;
+    color: var(--text-milk);
+}
 
+a:hover, li, input::placeholder, #clockbox:hover, #datebox:hover {
+    color: var(--text-nord);
 }
 
 input {
-    background-color: #24283b;
+    background: var(--bg);
     font: 16px 'Ubuntu Mono', monospace;
-    color: #a9b1d6;
+    color: transparent;
+    text-shadow: 0 0 0 var(--text-nord); /* #a9b1d6 */
     height: 100%;
     width: 100%;
-    border: 2px solid #a9b1d6;
-    border-top: none;
+    border: 2px solid var(--text-milk);
     text-align: center;
-    margin-top: 0px;
     outline: none;
     padding: 5px;
-  }
+}
 
-input::placeholder {
-    color: #a9b1d6;
+input:hover {
+    border: 2px solid var(--text-nord);
 }
