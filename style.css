@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
 :root {
-    --tiles: url("tiles.png");
+    --tiles: url("static/tiles.png");
     --bg: #3B4252;
     --text-nord: #8CD0D3;
     --text-milk: #FDF2D9;
