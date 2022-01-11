@@ -11,7 +11,10 @@ The color scheme is easily configurable on the `style.css` file only by changing
 * You're done!
 
 ## Firefox
-Go to firefox `settings/home` and you'll see `Homepage and new windows` with a dropdown menu beside it. Select `Custom URLs...` and simply enter the absolute path of `index.html` inside. Unfortunately firefox doesn't support adding custom pages on new tabs, so I mapped `Super+H` (for home) to `firefox file:///home/dribe/Repos/nord-startpage/index.html` as a workaround, although there may be better alternatives like [installing add-ons](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) to override the default firefox settings, but I had problems with them and decided to stick with the workaround.
+* Go to firefox `settings/home` and you'll see `Homepage and new windows` with a dropdown menu beside it. 
+* Select `Custom URLs...` and simply enter the absolute path of `index.html` inside. 
+Unfortunately firefox doesn't support adding custom pages on new tabs, so I mapped `Super+H` (for home) to `firefox file:///home/dribe/Repos/nord-startpage/index.html` as a workaround, although there may be better alternatives like [installing add-ons](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) to override the default firefox settings, but I had problems with them and decided to stick with the workaround.
 
 ## Chrome
-Uninstall Chrome and install some other browser (firefox recommended). See above to use custom pages on firefox.
+* Uninstall Chrome and install some other browser (firefox recommended). 
+* See above steps to use custom pages on firefox.
