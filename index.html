@@ -1,106 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>home</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="static/head.png" type="image/x-icon">
   <script type="text/javascript">
-    document.addEventListener("click", (e) => {
-      document.getElementById("input").focus();
-    });
+    document.addEventListener("click", e => document.getElementById("input").focus());
   </script>
 </head>
 
 <body>
-  <div class="clock-box">
+  <script src="scripts/clockbox.js"></script>
 
-    <div id="clockbox"></div>
+  <img id="img" src="static/forest.jpg" alt="forest">
+  
+  <script src="scripts/bookmarks.js"></script>
 
-    <script type="text/javascript">
-      function GetClock() {
-        var date = new Date();
-        var h = date.getHours();
-        var m = date.getMinutes();
-        var s = date.getSeconds();
-        if (h <= 9) h = "0" + h;
-        if (m <= 9) m = "0" + m;
-        if (s <= 9) s = "0" + s;
-        var clocktext = `${h}:${m}:${s}`;
-        document.getElementById('clockbox').innerHTML = clocktext;
-      }
-
-      GetClock();
-      setInterval(GetClock, 1000);
-    </script>
-
-    <div id="datebox"></div>
-
-    <script type="text/javascript">
-      var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-      function GetClock() {
-        var date = new Date();
-        var wd = date.getDay();
-        var m = date.getMonth();
-        var d = date.getDate(); 
-        var y = date.getFullYear();
-        var clocktext = `${days[wd]}, ${months[m]} ${d}, ${y}`;
-        document.getElementById('datebox').innerHTML = clocktext;
-      }
-
-      GetClock();
-      setInterval(GetClock, 1000);
-    </script>
-
-  </div>
-
-  <img src="static/forest.jpg" alt="forest">
-
-  <nav>
-    <ul>
-      <li>social</li>
-      <li><a href="https://tumblr.com/">tumblr</a></li>
-      <li><a href="https://reddit.com/">reddit</a></li>
-      <li><a href="https://last.fm/">last.fm</a></li>
-      <li><a href="https://netflix.com/browse/">netflix</a></li>
-      <li><a href="https://web.telegram.org/">telegram</a></li>
-      <li><a href="https://web.whatsapp.com/">whatsapp</a></li>
-      <li><a href="https://instagram.com/">instagram</a></li>
-      <li><a href="https://letterboxd.com/">letterboxd</a></li>
-    </ul>
-    <ul>
-      <li>reddit</li>
-      <li><a href="https://reddit.com/r/startpages/">startpages</a></li>
-      <li><a href="https://reddit.com/r/unixporn/">unixporn</a></li>
-      <li><a href="https://reddit.com/r/vimporn/">vimporn</a></li>
-      <li><a href="https://reddit.com/r/linuxmasterrace/">linux</a></li>
-      <li><a href="https://reddit.com/r/vim/">vim</a></li>
-      <li><a href="https://reddit.com/r/adventofcode/">aoc</a></li>
-    </ul>
-    <ul>
-      <li>code</li>
-      <li><a href="https://adventofcode.com/">aoc</a></li>
-      <li><a href="https://leetcode.com/">leet</a></li>
-      <li><a href="https://github.com/">github</a></li>
-      <li><a href="https://visualgo.net/en/">visualgo</a></li>
-    </ul>
-    <ul>
-      <li>extra</li>
-      <li><a href="">bookmark</a></li>
-      <li><a href="">bookmar</a></li>
-      <li><a href="">bookma</a></li>
-      <li><a href="">bookm</a></li>
-      <li><a href="">boo</a></li>
-      <li><a href="">bo</a></li>
-      <li><a href="">b</a></li>
-    </ul>
-  </nav>
-
-  <form action="https://duckduckgo.com/" method="GET">
+  <form id="search" action="https://duckduckgo.com/" method="GET">
     <input id="input" autofocus name="q" type="search" placeholder="search" tabindex="1" autocomplete="off">
   </form>
+
+  <script src="scripts/bangs.js"></script>
 </body>
 
 </html>

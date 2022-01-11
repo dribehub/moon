@@ -26,9 +26,25 @@ html, body {
     user-select: none;
 }
 
+.clock-box {
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--text-milk);
+    background: var(--bg);
+}
+
+#clockbox, #datebox {
+    text-align: center;
+    /* position: relative;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; */
+}
+
 img {
     height: 230px;
-    width: 700px; /* 630px */
+    width: 700px;
     object-fit: cover;
     border: 2px solid var(--text-nord);
     margin-bottom: 20px;
@@ -36,7 +52,6 @@ img {
 }
 
 nav {
-    color: var(--text-nord);
     background: var(--bg);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -50,28 +65,16 @@ ul {
     margin: 5px 0 20px -35px;
 }
 
-.clock-box {
-    justify-content: center;
-    margin-bottom: 20px;
-    color: var(--text-milk);
-    background: var(--bg);
-}
-
-#clockbox, #datebox {
-    text-align: center;
-    /* position: relative; */
-    /* flex-direction: row; */
-    /* display: flex; */
-    /* justify-content: space-between; */
-    /* margin-bottom: 20px; */
-}
-
-a {
+.text, a {
     text-decoration: none;
     color: var(--text-milk);
 }
 
-a:hover, li, input::placeholder, #clockbox:hover, #datebox:hover {
+a, input {
+    cursor: default;
+}
+
+a:hover, .text li:hover, .accent, input::placeholder, #clockbox:hover, #datebox:hover {
     color: var(--text-nord);
 }
 
@@ -90,4 +93,17 @@ input {
 
 input:hover {
     border: 2px solid var(--text-nord);
+}
+
+#bangs {
+    position: absolute;
+    left: 900px;
+    top: 0px;
+    width: 400px;
+    font-size: smaller;
+    display: flex;
+}
+
+#bangs li {
+    margin-right: 20px;
 }
