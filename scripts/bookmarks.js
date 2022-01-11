@@ -3,7 +3,7 @@ const bookmarksMap = new Map([
         {'tumblr': 'https://tumblr.com/'},
         {'reddit': 'https://reddit.com/'},
         {'twitter': 'https://twitter.com'},
-        {'last.fm': 'https://last.fm/user/'},
+        {'last.fm': 'https://last.fm/'},
         {'netflix': 'https://netflix.com/browse'},
         {'telegram': 'https://web.telegram.org/'},
         {'whatsapp': 'https://web.whatsapp.com/'},
