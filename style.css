@@ -5,6 +5,7 @@
     --bg: #3B4252;
     --text-nord: #8CD0D3;
     --text-milk: #FDF2D9;
+    --ctg: 4;
 }
 
 html, 
@@ -56,7 +57,7 @@ img {
 nav {
     background: var(--bg);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(var(--ctg), 1fr);
     text-align: center;
     margin: 0 0 20px 0;
     padding: 5px 0;
