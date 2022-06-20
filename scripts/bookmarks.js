@@ -1,63 +1,67 @@
 const bookmarksMap = new Map([
     ['social', [
+        {'last.fm': 'https://last.fm/'},
         {'tumblr': 'https://tumblr.com/'},
         {'reddit': 'https://reddit.com/'},
         {'twitter': 'https://twitter.com'},
-        {'last.fm': 'https://last.fm/'},
+        {'instagram': 'https://instagram.com/'},
         {'netflix': 'https://netflix.com/browse'},
         {'telegram': 'https://web.telegram.org/'},
         {'whatsapp': 'https://web.whatsapp.com/'},
-        {'instagram': 'https://instagram.com/'},
-        {'letterboxd': 'https://letterboxd.com/'}
+        {'letterboxd': 'https://letterboxd.com/'},
     ]],
     ['reddit', [
-        {'startpages': 'https://reddit.com/r/startpages/'},
-        {'unixporn': 'https://reddit.com/r/unixporn/'},
-        {'vimporn': 'https://reddit.com/r/vimporn/'},
-        {'linux': 'https://reddit.com/r/linuxmasterrace/'},
-        {'tpcj': 'https://reddit.com/r/TwinPeaksCircleJerk/'},
         {'vim': 'https://reddit.com/r/vim/'},
+        {'tp': 'https://reddit.com/r/twinpeaks/'},
+        {'vimporn': 'https://reddit.com/r/vimporn/'},
         {'aoc': 'https://reddit.com/r/adventofcode/'},
-        {'tp': 'https://reddit.com/r/twinpeaks/'}
+        {'unixporn': 'https://reddit.com/r/unixporn/'},
+        {'linux': 'https://reddit.com/r/linuxmasterrace/'},
+        {'startpages': 'https://reddit.com/r/startpages/'},
+        {'tpcj': 'https://reddit.com/r/TwinPeaksCircleJerk/'},
     ]],
     ['code', [
-        {'aoc': 'https://adventofcode.com/'},
+        {'dev.to': 'https://dev.to/'},
         {'leet': 'https://leetcode.com/'},
         {'github': 'https://github.com/'},
+        {'aoc': 'https://adventofcode.com/'},
         {'visualgo': 'https://visualgo.net/en/'},
-        {'dev.to': 'https://dev.to/'}
     ]],
     ['extra', [
-        {'bookmark': ''},
-        {'bookmar': ''},
-        {'bookma': ''},
-        {'bookm': ''},
-        {'book': ''},
-        {'boo': ''},
+        {'b': ''},
         {'bo': ''},
-        {'b': ''}
+        {'boo': ''},
+        {'book': ''},
+        {'bookm': ''},
+        {'bookma': ''},
+        {'bookmar': ''},
+        {'bookmark': ''},
     ]]
 ]);
 
-function sortMap() {
+function getSortedMap() {
+    const sortedMap = new Map(JSON.parse(JSON.stringify([...bookmarksMap])));
     let isEven = false;
-    for (let [, bookmarks] of bookmarksMap) {
+    const len = obj => Object.keys(obj)[0].length;
+    for (let [, bookmarks] of sortedMap) {
         for (let i = 0; i < bookmarks.length; i++) {
             for (let j = i + 1; j < bookmarks.length; j++) {
-                const len = obj => Object.keys(obj)[0].length;
                 const isAscending = len(bookmarks[i]) < len(bookmarks[j]);
-                if (isEven && isAscending || !isEven && !isAscending)
+                if (isEven === isAscending)
                     [bookmarks[i], bookmarks[j]] = [bookmarks[j], bookmarks[i]];
             }
         }
         isEven = !isEven;
     }
+    return sortedMap;
 }
 
-function populateLinks() {
+function initBookmarks(sorted) {
+    if (document.getElementById('links') != null)
+        document.getElementById('links').remove();
     const nav = document.createElement('nav');
     nav.id = 'links';
-    for (let [ctg, bookmarks] of bookmarksMap) {
+    for (let [ctg, bookmarks] of sorted ? getSortedMap() : bookmarksMap) {
         const list = document.createElement('ul');
         const header = document.createElement('li');
         header.className = 'accent';
@@ -67,7 +71,8 @@ function populateLinks() {
             const el = document.createElement('li');
             const anchor = document.createElement('a');
             anchor.href = Object.values(bookmark)[0];
-            anchor.innerHTML = Object.keys(bookmark)[0];
+            anchor.innerHTML = highlightSymbols(Object.keys(bookmark)[0]);
+            anchor.id = Object.keys(bookmark)[0];
             el.appendChild(anchor);
             list.appendChild(el);
         }
@@ -75,6 +80,3 @@ function populateLinks() {
     }
     document.getElementById('img').insertAdjacentElement('afterend', nav);
 }
-
-sortMap();
-populateLinks();

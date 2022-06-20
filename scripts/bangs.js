@@ -1,34 +1,32 @@
 const bangsMap = new Map([
-    ['wikipedia', 'w'],
-    ['r/unixporn', 'r'],
-    ['letterboxd', 'unxprn'],
-    ['netflix', 'nf'],
-    ['imdb', 'imd'],
-    ['rotten tomatoes', 'rt'],
-    ['spotify', 'spy'],
-    ['stack overflow', 'ov'],
-    ['google translate', 'gt-english'],
+    ['w', 'wikipedia'],
+    ['r', 'reddit'],
+    ['yt', 'youtube'],
+    ['lb', 'letterboxd'],
+    ['nf', 'netflix'],
+    ['rt', 'rotten/tomatoes'],
+    ['ov', 'stack/overflow'],
+    ['imd', 'imdb'],
+    ['spy', 'spotify'],
+    ['unxprn', 'r/unixporn'],
+    ['tumblr', 'tumblr'],
+    ['gt-english', 'google/translate']
 ]);
 
-function populateBangs() {
-    const root = document.createElement('div');
-    root.id = 'bangs';
-    const bangs = document.createElement('ul');
-    bangs.className = 'accent';
-    const descriptions = document.createElement('ul');
-    descriptions.className = 'text';
-    root.appendChild(bangs);
-    root.appendChild(descriptions);
+function initBangs() {
+    const root = $('<div>', {id: 'bangs'});
+    const bangs = $('<ul>', {class: 'accent'});
+    const descs = $('<ul>', {class: 'text'});
+    root.append(bangs);
+    root.append(descs);
+    
     for (let [key, val] of bangsMap) {
-        const bangElement = document.createElement('li');
-        bangElement.innerHTML = `!${val}`;
-        bangs.appendChild(bangElement);
-        const descElement = document.createElement('li');
-        descElement.innerHTML = key;
-        descElement.addEventListener("click", e => document.getElementById("input").value = `!${val} `);
-        descriptions.appendChild(descElement);
+        const bang = $('<li>').html(uhl('!') + key);
+        const desc = $('<li>').html(highlightSymbols(val));
+        desc.click(() => $('#input').val(`!${key} `));
+        bangs.append(bang);
+        descs.append(desc);
     }
-    document.getElementById('search').insertAdjacentElement('afterend', root);
+    
+    root.insertAfter($('#form'));
 }
-
-populateBangs();

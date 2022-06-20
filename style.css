@@ -7,7 +7,8 @@
     --text-milk: #FDF2D9;
 }
 
-html, body {
+html, 
+body {
     font-family: 'Ubuntu Mono', monospace;
     font-size: 25px;
     background: var(--bg);
@@ -33,7 +34,8 @@ html, body {
     background: var(--bg);
 }
 
-#clockbox, #datebox {
+#clockbox, 
+#datebox {
     text-align: center;
     /* position: relative;
     flex-direction: row;
@@ -54,7 +56,7 @@ img {
 nav {
     background: var(--bg);
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     text-align: center;
     margin: 0 0 20px 0;
     padding: 5px 0;
@@ -65,16 +67,24 @@ ul {
     margin: 5px 0 20px -35px;
 }
 
-.text, a {
+a, 
+.text {
     text-decoration: none;
     color: var(--text-milk);
 }
 
-a, input {
+a, 
+input {
     cursor: default;
 }
 
-a:hover, .text li:hover, .accent, input::placeholder, #clockbox:hover, #datebox:hover {
+.accent, 
+a:hover, 
+label:hover, 
+.text li:hover, 
+#datebox:hover, 
+#clockbox:hover, 
+input::placeholder {
     color: var(--text-nord);
 }
 
@@ -95,6 +105,14 @@ input:hover {
     border: 2px solid var(--text-nord);
 }
 
+label {
+    font-size: smaller;
+}
+
+form {
+    text-align: center;
+}
+
 #bangs {
     position: absolute;
     left: 900px;
@@ -106,4 +124,9 @@ input:hover {
 
 #bangs li {
     margin-right: 20px;
+}
+
+a:focus {
+    outline: none;
+    color: var(--text-nord);
 }

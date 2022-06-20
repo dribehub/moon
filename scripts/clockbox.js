@@ -1,40 +1,49 @@
-var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const weekdays = [
+    'Sunday', 
+    'Monday', 
+    'Tuesday', 
+    'Wednesday', 
+    'Thursday', 
+    'Friday', 
+    'Saturday'
+];
+const months = [
+    'January', 
+    'February', 
+    'March', 
+    'April', 
+    'May', 
+    'June', 
+    'July', 
+    'August', 
+    'September', 
+    'October', 
+    'November', 
+    'December'
+];
 
-function GetClock() {
-    var date = new Date();
-    var h = date.getHours();
-    var m = date.getMinutes();
-    var s = date.getSeconds();
-    if (h <= 9) h = "0" + h;
-    if (m <= 9) m = "0" + m;
-    if (s <= 9) s = "0" + s;
-    document.getElementById('clockbox').innerHTML = `${h}:${m}:${s}`;
+function syncClockbox() {
+    const util = new Date();
+    let hours = util.getHours();
+    let minutes = util.getMinutes();
+    let seconds = util.getSeconds();
+    if (hours <= 9) hours = `0${hours}`;
+    if (minutes <= 9) minutes = `0${minutes}`;
+    if (seconds <= 9) seconds = `0${seconds}`;
+    const day = util.getDay();
+    const month = util.getMonth();
+    const date = util.getDate(); 
+    const year = util.getFullYear();
+
+    const setHighlighted = (id, html) => $(id).html(highlightSymbols(html));
+    setHighlighted('#clockbox', `It's ${hours}:${minutes}:${seconds} past midnight`);
+    setHighlighted('#datebox', `on ${weekdays[day]}, ${months[month]} ${date}, ${year}`);
 }
 
-function GetDate() {
-    var date = new Date();
-    var w = date.getDay();
-    var m = date.getMonth();
-    var d = date.getDate(); 
-    var y = date.getFullYear();
-    document.getElementById('datebox').innerHTML = `${weekdays[w]}, ${months[m]} ${d}, ${y}`;
+function initClockbox() {
+    const root = $('<div>', {class: 'clock-box'})
+        .append($('<div>', {id: 'clockbox'}))
+        .append($('<div>', {id: 'datebox'}));
+    $(document.body).prepend(root);
+    (f => {f(); setInterval(f, 1000);})(syncClockbox);
 }
-
-function createClockbox() {
-    const root = document.createElement('div');
-    root.className = 'clock-box';
-    let div = document.createElement('div');
-    div.id = 'clockbox';
-    root.appendChild(div);
-    div = document.createElement('div');
-    div.id = 'datebox';
-    root.appendChild(div);
-    document.body.insertAdjacentElement('afterbegin', root);
-}
-
-createClockbox();
-GetClock();
-setInterval(GetClock, 1000);
-GetDate();
-setInterval(GetDate, 1000);

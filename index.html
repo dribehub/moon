@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>home</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="static/head.png" type="image/x-icon">
-  <script type="text/javascript">
-    document.addEventListener("click", e => document.getElementById("input").focus());
-  </script>
+  <link rel="icon" href="static/home.svg" type="image/x-icon">
+  <script src="scripts/highlightSymbols.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"
+          integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="></script>
 </head>
-
 <body>
-  <script src="scripts/clockbox.js"></script>
-
-  <img id="img" src="static/forest.jpg" alt="forest">
-  
-  <script src="scripts/bookmarks.js"></script>
-
-  <form id="search" action="https://duckduckgo.com/" method="GET">
-    <input id="input" autofocus name="q" type="search" placeholder="search" tabindex="1" autocomplete="off">
+  <img id="img" src="static/forest.jpg">
+  <form id="form" action="https://duckduckgo.com/" method="GET">
+    <input id="input" autofocus name="q" type="search" placeholder="search" tabindex="1" autocomplete="on">
   </form>
-
-  <script src="scripts/bangs.js"></script>
+  <script src="scripts/clockbox.js"></script>
+  <script src="scripts/bookmarks.js"></script>
+  <script src="scripts/input.js"></script>
+  <script src="scripts/bangs.js"></script>  
+  <script src="scripts/init.js"></script>  
 </body>
-
 </html>
