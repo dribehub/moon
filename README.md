@@ -31,7 +31,7 @@ and highlighting symbols to a secondary accent color can significantly increase 
 
 # Usage
 * Download the repo locally using `git clone https://github.com/dribehub/nord-startpage.git` or the `Download ZIP` button.
-* Add the `index.html` to your browser's home page (depending on your browser you may need to search how to add custom home pages, some may not even support this feature). 
+* Add the `index.html` to your browser's home page (depending on your browser you may need to search how to add custom home pages, some may not support this feature). 
 * Customize your `bookmarksMap` and `bangsMap` to your personal choice. Optionally you can change the search engine if you prefer.
 * You're done!
 
