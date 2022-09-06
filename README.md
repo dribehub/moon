@@ -15,7 +15,7 @@ This is a fork of [voxie12/moon](https://github.com/voxie12/moon), customized wi
   - Easily configurable to your needs. Just modify the `bangsMap` on `scripts/bangs.js`.
 ### 🔖 Bookmarks
   - Every bookmark belongs to a category, so everything looks organized and easy to point out.
-  - Personally I use 4 or 5 categories, depending on my current workflow, but you can add as many as you want.
+  - Personally I use 4 to 5 categories, depending on my current workflow, but you can add as many as you want.
   - You can customize your `bookmarksMap` on `scripts/bookmarks.js`.
 ### 🔍 Modes
   - You can switch between `Search Mode` and `Find Mode` just by pressing `Esc`.
