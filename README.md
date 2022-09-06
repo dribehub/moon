@@ -24,7 +24,7 @@ This is a fork of [voxie12/moon](https://github.com/voxie12/moon), customized wi
   - You can even switch modes while typing. Same input, different modes.
 ### ↕ Alternated sorting
   - Bookmarks are sorted by their length, making it feel more eco-friendly now that they look like trees 🌲🌲🌲.
-  - The direction alternates between categories, so the trees kind of tessellate (not actually).
+  - The direction alternates between categories, so the trees kind of tessellate (not really).
 ### ✨ Minimalistic Look and Feel
   - Readability deserves special attention when it comes to polishing the user experience. I found out that using a minimal palette 
 and highlighting symbols to a secondary accent color can significantly increase readability of the UI. You can try experimenting on other accent colors, but keep in mind the principes of minimalism, as it can get bloated with unnecessary distractions pretty easily.
