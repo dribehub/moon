@@ -41,5 +41,5 @@ and highlighting symbols to a secondary accent color can significantly increase 
 Unfortunately firefox doesn't support adding custom pages on new tabs, so I mapped `Super+H` (for home) to `firefox file:///home/dribe/Repos/nord-startpage/index.html` as a workaround, although there may be better alternatives like [installing add-ons](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) to override the default firefox settings, but I had problems with them and decided to stick with the workaround.
 
 ## Chrome
-* Uninstall Chrome (bad proprietary software) and install some other (nice non-proprietary) browser (firefox recommended). 
+* Uninstall Chrome (bad proprietary software) and install some other (nice and FOSS) browser (firefox recommended). 
 * See above steps to use custom pages on firefox.
