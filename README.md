@@ -32,8 +32,8 @@ and highlighting symbols to a secondary accent color can significantly increase 
 # Usage
 * Download the repo locally using `git clone https://github.com/dribehub/nord-startpage.git` or the `Download ZIP` button.
 * Add the `index.html` to your browser's home page (depending on your browser you may need to search how to add custom home pages, some may not support this feature). 
-* Customize your `bookmarksMap` and `bangsMap` to your personal choice. Optionally you can change the search engine if you prefer.
-* You're done!
+* Customize your `bookmarksMap` and `bangsMap` to your personal choice.
+* You can change the search engine if you prefer, but keep in mind that bangs will [only work in DuckDuckGo](https://duckduckgo.com/bang?).
 
 ## Firefox
 * Go to firefox `settings/home` and you'll see `Homepage and new windows` with a dropdown menu beside it. 
@@ -41,5 +41,5 @@ and highlighting symbols to a secondary accent color can significantly increase 
 Unfortunately firefox doesn't support adding custom pages on new tabs, so I mapped `Super+H` (for home) to `firefox file:///home/dribe/Repos/nord-startpage/index.html` as a workaround, although there may be better alternatives like [installing add-ons](https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search) to override the default firefox settings, but I had problems with them and decided to stick with the workaround.
 
 ## Chrome
-* Uninstall Chrome and install some other browser (firefox recommended). 
+* Uninstall Chrome (bad proprietary software) and install some other (nice non-proprietary) browser (firefox recommended). 
 * See above steps to use custom pages on firefox.
